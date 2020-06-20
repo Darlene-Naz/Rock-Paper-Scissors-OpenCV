@@ -1,6 +1,17 @@
 import pygame
 import cv2
 import numpy as np
+import keras as k
+import tensorflow as tf
+from tensorflow.keras.models import load_model
+
+# --- In utils
+ROCK = 0
+PAPER = 1
+SCISSORS = 2
+
+# text labels corresponding to gestures
+gestureTxt = {ROCK: 'rock', PAPER: 'paper', SCISSORS: 'scissors'}
 
 # --- Init
 print("Initializing Camera...")
@@ -8,6 +19,9 @@ cap = cv2.VideoCapture(0)
 print("Camera Window Loaded!")
 
 pygame.init()
+
+model= load_model(filepath="C:/Users/Darlene/Desktop/GitHub/Rock-Paper-Scissors-OpenCV-Game/models/final_custom_model7.h5")
+
 
 # Define some default colors, fonts and msgs
 font = cv2.FONT_HERSHEY_SIMPLEX
@@ -66,6 +80,18 @@ while carryOn:
     # define region of interest
     roi = frame[0:280, 0:335]
     rgb_roi = cv2.cvtColor(roi, cv2.COLOR_BGR2RGB)
+    
+    # pred
+    x=cv2.resize(rgb_roi,(100,100))
+    x = x / 255
+    img_arr=np.array(x)
+    img = np.array([img_arr])
+    print(img.shape)
+    y=model.predict(img)
+    print(np.max(y))
+    print(np.argmax(y,axis=1))
+    print(gestureTxt[int(np.argmax(y,axis=1))])
+    
 
     pImg = pygame.surfarray.make_surface(rgb_roi)
 
