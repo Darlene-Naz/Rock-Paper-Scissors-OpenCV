@@ -1,6 +1,6 @@
 import pygame 
 
-#--------------------------------------------
+# --- Init
 pygame.init()
 
 # Define some colors
@@ -96,11 +96,11 @@ while carryOn:
     screen.blit(pScoreText,(515, 50))
 
 
-    # --- Go ahead and update the screen with what we've drawn.
+    # --- Update the screen 
     pygame.display.flip()
     
     # --- Limit to 60 frames per second
     clock.tick(60)
 
-#Once we have exited the main program loop we can stop the game engine:
+# --- Exit code
 pygame.quit()
