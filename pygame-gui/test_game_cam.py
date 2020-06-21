@@ -1,8 +1,9 @@
 import pygame
-import cv2
+
 import numpy as np
 import keras as k
 import tensorflow as tf
+import cv2
 from tensorflow.keras.models import load_model
 
 # --- In utils
@@ -11,7 +12,7 @@ PAPER = 1
 SCISSORS = 2
 
 # text labels corresponding to gestures
-gestureTxt = {ROCK: 'rock', PAPER: 'paper', SCISSORS: 'scissors'}
+gestureTxt = {ROCK: "rock", PAPER: "paper", SCISSORS: "scissors"}
 
 # --- Init
 print("Initializing Camera...")
@@ -20,7 +21,9 @@ print("Camera Window Loaded!")
 
 pygame.init()
 
-model= load_model(filepath="C:/Users/Darlene/Desktop/GitHub/Rock-Paper-Scissors-OpenCV-Game/models/final_custom_model7.h5")
+model = load_model(
+    filepath="C:/Users/Darlene/Desktop/GitHub/Rock-Paper-Scissors-OpenCV-Game/models/final_custom_model7.h5"
+)
 
 
 # Define some default colors, fonts and msgs
@@ -65,13 +68,15 @@ pBGPosition = (370, 100)
 carryOn = True
 
 clock = pygame.time.Clock()
+duration = -1
+timer_started = False
 
 
 # --------------------------------------------
 
 
 while carryOn:
-    
+
     # --- opencv pImg
 
     ret, frame = cap.read()
@@ -80,33 +85,43 @@ while carryOn:
     # define region of interest
     roi = frame[0:280, 0:335]
     rgb_roi = cv2.cvtColor(roi, cv2.COLOR_BGR2RGB)
-    
+
     # pred
-    x=cv2.resize(rgb_roi,(100,100))
-    x = x / 255
-    img_arr=np.array(x)
-    img = np.array([img_arr])
-    print(img.shape)
-    y=model.predict(img)
-    print(np.max(y))
-    print(np.argmax(y,axis=1))
-    print(gestureTxt[int(np.argmax(y,axis=1))])
-    
+    if timer_started:
+        pygame.time.wait(1000)
+        if duration > 0:
+            duration = duration - 1
+
+    if duration == 0:
+        x = cv2.resize(rgb_roi, (100, 100))
+        x = x / 255
+        img_arr = np.array(x)
+        img = np.array([img_arr])
+        print(img.shape)
+        y = model.predict(img)
+        print(np.max(y))
+        print(np.argmax(y, axis=1))
+        print(gestureTxt[int(np.argmax(y, axis=1))])
 
     pImg = pygame.surfarray.make_surface(rgb_roi)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             carryOn = False
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                timer_started = not timer_started
+                if timer_started:
+                    duration = 3
 
     # --- Game logic
 
     # --- Drawing background code
     screen.fill(WHITE)
 
-    pygame.draw.rect(screen, BLACK, [10, 0, sWIDTH / 2 - 20, sHEIGHT - 10], 1)
+    pygame.draw.rect(screen, GREY, [10, 0, sWIDTH / 2 - 20, sHEIGHT - 10], 0)
     pygame.draw.rect(
-        screen, BLACK, [sWIDTH / 2 + 10, 0, sWIDTH / 2 - 20, sHEIGHT - 10], 1
+        screen, GREY, [sWIDTH / 2 + 10, 0, sWIDTH / 2 - 20, sHEIGHT - 10], 0
     )
 
     cTitle = FONT.render("COMPUTER", True, BLACK)
@@ -132,8 +147,25 @@ while carryOn:
 
     screen.blit(cBG, cBGPosition)
     screen.blit(pBG, pBGPosition)
+
     screen.blit(cImg, cImgPosition)
     screen.blit(pImg, pImgPosition)
+
+    clockImg = pygame.image.load(
+        "C:\\Users\\Darlene\\Desktop\\GitHub\\Rock-Paper-Scissors-OpenCV-Game\\pygame-gui\\time.png"
+    )
+    clockImg.convert()  # will place at (0,0)
+    rect = clockImg.get_rect()  # get dimensions of its rect shape
+    rect.center = sWIDTH // 2, 80
+    screen.blit(clockImg, rect)
+
+    clockImg = pygame.image.load(
+        "C:\\Users\\Darlene\\Desktop\\GitHub\\Rock-Paper-Scissors-OpenCV-Game\\pygame-gui\\comment.png"
+    )
+    clockImg.convert()  # will place at (0,0)
+    rect = clockImg.get_rect()  # get dimensions of its rect shape
+    rect.center = 64, sHEIGHT - 60
+    screen.blit(clockImg, rect)
 
     cScoreText = FONT.render(str(cScore), True, BLACK)
     screen.blit(cScoreText, (165, 50))
