@@ -32,6 +32,7 @@ class RockPaperScissor:
         # scores
         self.pScore = 0
         self.cScore = 0
+        self.totalScore = 1
         self.winner = None
 
         # timer
@@ -141,8 +142,8 @@ class RockPaperScissor:
         vertices = [(3, 3), (396, 3), (396, 196), (3, 196), (3, 3)]
         pygame.draw.polygon(gameOverPopUp, self.BLACK, vertices, 1)
 
-        gameOverText = self.FONT.render("GAME OVER", self.BLACK)
-        gameOverPopUp.blit(gameOverText[0], (200 - gameOverText[1].width // 2, 45))
+        gameOverText = self.FONT.render("GAME OVER",True, self.BLACK)
+        gameOverPopUp.blit(gameOverText, (120, 45))
 
         if self.pScore > self.cScore:
             self.winner = "PLAYER"
@@ -151,12 +152,11 @@ class RockPaperScissor:
             self.winner = "COMPUTER"
             color = self.RED
 
-        winnerText = self.FONT.render("{} WINS!".format(self.winner), color)
-        self.blitTextAlignCenter(gameOverPopUp, winnerText, (200, 110))
+        winnerText = self.FONT.render("{} WINS!".format(self.winner), True, color)
+        gameOverPopUp.blit(winnerText, (110, 110))
 
-        # Blit goZone to main surface
-        pos = (self.sWidth / 2 - 200, 175)
-        self.surf.blit(gameOverPopUp, pos)
+        pos = (self.sWIDTH / 2 - 200, 175)
+        self.screen.blit(gameOverPopUp, pos)
 
         pygame.display.flip()
 
@@ -180,6 +180,14 @@ class RockPaperScissor:
             pygame.time.wait(1000)
             if self.duration > 0:
                 self.duration = self.duration - 1
+    
+    def decideWinner(self,c_num,p_num):
+        if (p_num==c_num):
+            self.updateScores("tie")
+        elif((p_num == 2 and c_num == 0) or (p_num == 1 and c_num ==2) or (p_num == 0 and c_num == 1) ):
+            self.updateScores("player")
+        else:
+            self.updateScores("computer")
 
     def updateScores(self, winner=None):
         self.winner = winner
@@ -187,6 +195,8 @@ class RockPaperScissor:
             self.cScore += 1
         elif winner == "player":
             self.pScore += 1
+        if(self.cScore == self.totalScore or self.pScore ==self.totalScore):
+            self.gameOver()
 
     def setCImg(self, num):
         img = cv2.imread("utils/images/" + str(num) + ".png", cv2.IMREAD_COLOR)

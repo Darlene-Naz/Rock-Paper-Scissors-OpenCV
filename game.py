@@ -3,9 +3,6 @@ import pygame
 import cv2
 import random
 import numpy as np
-import keras as k
-import keras.backend as K
-import tensorflow as tf
 from components import RockPaperScissor, Camera
 from tensorflow.keras.models import load_model
 
@@ -32,17 +29,21 @@ while rps.carryOn:
     if rps.duration == 0 and rps.timer_started:
 
         # --- cImg
-        num = random.randint(0, 2)
-        rps.setCImg(num)
+        c_num = random.randint(0, 2)
+        rps.setCImg(c_num)
 
-        # testing only
+        # model predicts
         x = camera.save_current_frame(frame_roi)
         y = model.predict(x)
         print(np.max(y))
+        p_num = np.argmax(y, axis=1)[0]
         print(np.argmax(y, axis=1))
         print(utils.gestureText[int(np.argmax(y, axis=1))])
 
+        rps.decideWinner(c_num,p_num)
+
         rps.stopTimer()
+        
 
     # --- Drawing background code
     rps.draw_ui()
