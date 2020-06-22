@@ -1,6 +1,7 @@
 import pygame
 import numpy as np
 import cv2
+import sys
 
 
 class RockPaperScissor:
@@ -200,6 +201,7 @@ class RockPaperScissor:
     def quit(self):
         self.carryOn = False
         pygame.quit()
+        sys.exit()
 
     def reset(self):
         self.winner = None
