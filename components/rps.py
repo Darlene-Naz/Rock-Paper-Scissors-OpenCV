@@ -1,7 +1,6 @@
 import pygame
 import numpy as np
 import cv2
-import utils
 
 
 class RockPaperScissor:
@@ -41,7 +40,7 @@ class RockPaperScissor:
         # Open a new window
         self.sWIDTH = 700
         self.sHEIGHT = 500
-        self.sWINDOW = (sWIDTH, sHEIGHT)
+        self.sWINDOW = (self.sWIDTH, self.sHEIGHT)
 
         self.screen = pygame.display.set_mode(self.sWINDOW)
         pygame.display.set_caption("Rock Paper Scissor")
@@ -60,10 +59,6 @@ class RockPaperScissor:
 
         self.cBGPosition = (20, 100)
         self.pBGPosition = (370, 100)
-
-        self.timerText = self.FONT_TIMER.render(
-            str(self.duration), True, self.SPRING_GREEN
-        )
 
     def draw_ui(self):
 
@@ -90,17 +85,17 @@ class RockPaperScissor:
 
         # c, p BG, IMG
         if self.winner == "player":
-            self.cBG.fill(RED)
-            self.pBG.fill(GREEN)
+            self.cBG.fill(self.RED)
+            self.pBG.fill(self.GREEN)
         elif self.winner == "computer":
-            self.cBG.fill(GREEN)
-            self.pBG.fill(RED)
+            self.cBG.fill(self.GREEN)
+            self.pBG.fill(self.RED)
         elif self.winner == "tie":
-            self.cBG.fill(PURPLE)
-            self.pBG.fill(PURPLE)
+            self.cBG.fill(self.PURPLE)
+            self.pBG.fill(self.PURPLE)
         else:
-            self.cBG.fill(GREY)
-            self.pBG.fill(GREY)
+            self.cBG.fill(self.GREY)
+            self.pBG.fill(self.GREY)
 
         self.screen.blit(self.cBG, self.cBGPosition)
         self.screen.blit(self.pBG, self.pBGPosition)
@@ -114,7 +109,8 @@ class RockPaperScissor:
         rect.center = self.sWIDTH // 2, 80
         self.screen.blit(clockImg, rect)
 
-        self.screen.blit(self.timerText, (self.sWIDTH // 2 - 10, 75))
+        timerText = self.FONT_TIMER.render(str(self.duration), True, self.SPRING_GREEN)
+        self.screen.blit(timerText, (self.sWIDTH // 2 - 10, 75))
 
         # textBubble = pygame.image.load(
         #     "C:\\Users\\Darlene\\Desktop\\GitHub\\Rock-Paper-Scissors-OpenCV-Game\\pygame-gui\\comment2.png"
@@ -170,6 +166,14 @@ class RockPaperScissor:
         else:
             self.quit()
 
+    def startTimer(self, duration):
+        self.timer_started = True
+        self.duration = duration
+
+    def stopTimer(self):
+        self.timer_started = False
+        self.duration = 0
+
     def updateTimer(self):
         if self.timer_started:
             pygame.time.wait(1000)
@@ -184,18 +188,18 @@ class RockPaperScissor:
             self.pScore += 1
 
     def setCImg(self, num):
-        img = cv2.imread(utils.gestureImgPaths[num], cv2.IMREAD_COLOR)
+        img = cv2.imread("utils/images/" + str(num) + ".png", cv2.IMREAD_COLOR)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         img = cv2.resize(img, (280, 335))
         img = np.rot90(img)
         self.cImg = pygame.surfarray.make_surface(img[:, ::-1, :])
 
     def setPImg(self, rgb_roi):
-        self.plImg = pygame.surfarray.make_surface(rgb_roi)
+        self.pImg = pygame.surfarray.make_surface(rgb_roi)
 
     def quit(self):
+        self.carryOn = False
         pygame.quit()
-        pygame.exit()
 
     def reset(self):
         self.winner = None
