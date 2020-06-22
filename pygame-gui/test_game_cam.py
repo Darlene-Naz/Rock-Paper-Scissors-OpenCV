@@ -167,9 +167,7 @@ while carryOn:
     screen.blit(cImg, cImgPosition)
     screen.blit(pImg, pImgPosition)
 
-    clockImg = pygame.image.load(
-        "C:\\Users\\Darlene\\Desktop\\GitHub\\Rock-Paper-Scissors-OpenCV-Game\\pygame-gui\\time.png"
-    )
+    clockImg = pygame.image.load("utils/images/time.png")
     clockImg.convert()  # will place at (0,0)
     rect = clockImg.get_rect()  # get dimensions of its rect shape
     rect.center = sWIDTH // 2, 80
