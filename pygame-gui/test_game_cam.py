@@ -1,18 +1,19 @@
 import pygame
-
+import random
 import numpy as np
 import keras as k
+import keras.backend as K
 import tensorflow as tf
 import cv2
 from tensorflow.keras.models import load_model
 
 # --- In utils
-ROCK = 0
-PAPER = 1
+ROCK = 1
+PAPER = 0
 SCISSORS = 2
 
 # text labels corresponding to gestures
-gestureTxt = {ROCK: "rock", PAPER: "paper", SCISSORS: "scissors"}
+gestureTxt = {PAPER: "paper", ROCK: "rock", SCISSORS: "scissors"}
 
 # --- Init
 print("Initializing Camera...")
@@ -22,7 +23,7 @@ print("Camera Window Loaded!")
 pygame.init()
 
 model = load_model(
-    filepath="C:/Users/Darlene/Desktop/GitHub/Rock-Paper-Scissors-OpenCV-Game/models/final_custom_model7.h5"
+    filepath="C:/Users/Darlene/Desktop/GitHub/Rock-Paper-Scissors-OpenCV-Game/models/final_custom_model6.h5"
 )
 
 
@@ -37,8 +38,10 @@ RED = (255, 0, 0)
 BLUE = (0, 0, 255)
 PURPLE = (255, 0, 255)
 GREY = (210, 210, 210)
+SPRING_GREEN = pygame.Color("springgreen")
 
 FONT = pygame.font.SysFont("Arial", 30, bold=True, italic=False)
+FONT_TIMER = pygame.font.Font(None, 54)
 
 
 # Open a new window
@@ -48,6 +51,8 @@ sWINDOW = (sWIDTH, sHEIGHT)
 
 screen = pygame.display.set_mode(sWINDOW)
 pygame.display.set_caption("Rock Paper Scissor")
+icon = pygame.image.load("utils/images/gaming.png")
+pygame.display.set_icon(icon)
 
 pScore = 0
 cScore = 0
@@ -68,7 +73,7 @@ pBGPosition = (370, 100)
 carryOn = True
 
 clock = pygame.time.Clock()
-duration = -1
+duration = 0
 timer_started = False
 
 
@@ -92,8 +97,18 @@ while carryOn:
         if duration > 0:
             duration = duration - 1
 
-    if duration == 0:
-        x = cv2.resize(rgb_roi, (100, 100))
+    if duration == 0 and timer_started:
+
+        no = str(random.randint(0, 2))
+        img = cv2.imread("utils/images/" + no + ".png", cv2.IMREAD_COLOR)
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        img = cv2.resize(img, (280, 335))
+        img = np.rot90(img)
+        cImg = pygame.surfarray.make_surface(img[:, ::-1, :])
+
+        bgr = cv2.cvtColor(rgb_roi, cv2.COLOR_RGB2BGR)
+        x = cv2.resize(bgr, (100, 100))
+        cv2.imwrite("pygame-gui/img.jpg", x)
         x = x / 255
         img_arr = np.array(x)
         img = np.array([img_arr])
@@ -102,6 +117,7 @@ while carryOn:
         print(np.max(y))
         print(np.argmax(y, axis=1))
         print(gestureTxt[int(np.argmax(y, axis=1))])
+        timer_started = not timer_started
 
     pImg = pygame.surfarray.make_surface(rgb_roi)
 
@@ -159,13 +175,16 @@ while carryOn:
     rect.center = sWIDTH // 2, 80
     screen.blit(clockImg, rect)
 
-    clockImg = pygame.image.load(
-        "C:\\Users\\Darlene\\Desktop\\GitHub\\Rock-Paper-Scissors-OpenCV-Game\\pygame-gui\\comment.png"
-    )
-    clockImg.convert()  # will place at (0,0)
-    rect = clockImg.get_rect()  # get dimensions of its rect shape
-    rect.center = 64, sHEIGHT - 60
-    screen.blit(clockImg, rect)
+    timer_text = FONT_TIMER.render(str(duration), True, SPRING_GREEN)
+    screen.blit(timer_text, (sWIDTH // 2 - 10, 75))
+
+    # textBubble = pygame.image.load(
+    #     "C:\\Users\\Darlene\\Desktop\\GitHub\\Rock-Paper-Scissors-OpenCV-Game\\pygame-gui\\comment2.png"
+    # )
+    # textBubble.convert()  # will place at (0,0)
+    # rect = textBubble.get_rect()  # get dimensions of its rect shape
+    # rect.center = 64, sHEIGHT - 60
+    # screen.blit(textBubble, rect)
 
     cScoreText = FONT.render(str(cScore), True, BLACK)
     screen.blit(cScoreText, (165, 50))

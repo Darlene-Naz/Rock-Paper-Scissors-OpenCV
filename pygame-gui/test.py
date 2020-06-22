@@ -30,7 +30,6 @@ while not done:
         if duration > 0:
             duration = duration - 1
 
-    print("hey " + str(duration))
     text = font.render(str(duration), True, font_color)
     screen.blit(text, (50, 50))
 
