@@ -1,10 +1,14 @@
-ROCK = 0
-PAPER = 1
+PAPER = 0
+ROCK = 1
 SCISSORS = 2
 
 # Define text labels corresponding to gestures
-gestureTxt = {ROCK: 'rock', PAPER: 'paper', SCISSORS: 'scissors'}
+gestureText = {ROCK: "rock", PAPER: "paper", SCISSORS: "scissors"}
 
-# Define paths to raw image folders
-imgPathsRaw = {ROCK: './img/rock/', PAPER: './img/paper/',
-               SCISSORS: './img/scissors/'}
+# Define paths to static image folders
+gestureImgPaths = {
+    PAPER: "utils/images/0.png",
+    ROCK: "utils/images/1.png",
+    SCISSORS: "utils/images/2.png",
+}
+
