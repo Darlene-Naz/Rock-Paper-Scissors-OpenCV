@@ -1,8 +1,8 @@
 <!-- @format -->
 
-# Rock-Paper-Scissors <img src="https://image.flaticon.com/icons/svg/2103/2103633.svg" height="40px" width="40px"/>
+# Rock-Paper-Scissors <img src="https://github.com/Darlene-Naz/Rock-Paper-Scissors-OpenCV-Game/blob/master/utils/images/gaming.png" height="40px" width="40px"/>
 
-A Rock-Paper-Scissors <b>Pygame</b> with a <b>CNN Multiclass Classifier</b> Model built in Keras to recognize real-time hand gestures using <b>OpenCV</b>.
+A Rock-Paper-Scissors <b>Pygame</b> with a <b>CNN Multiclass Classifier</b> model built in Keras to recognize real-time hand gestures using <b>OpenCV</b>.
 
 ## Working Demonstration
 
@@ -61,20 +61,22 @@ python play.py
 
 ## References
 
-<ul>
 CNN Links :
+
 <li>The best way to get started -> <a href="https://www.coursera.org/learn/convolutional-neural-networks/">Convolutional Neural Networks by Andrew Ng</a>
 
 OpenCV Links :
 
+<ul>
 <li><a href="https://www.pygame.org/docs/">Pygame Docs</a> or even this <a href="https://pygame.readthedocs.io/">Pygame Guide</a></li>
 <li><a href="https://www.101computing.net/getting-started-with-pygame/">A Basic Pygame Tutorial</a></li>
+</ul>
 
 Pygame Links :
 
+<ul>
 <li><a href="https://www.pygame.org/docs/">Pygame Docs</a> or even this <a href="https://pygame.readthedocs.io/">Pygame Guide</a></li>
 <li><a href="https://www.101computing.net/getting-started-with-pygame/">A Basic Pygame Tutorial</a></li>
-
 </ul>
 
 ## License
