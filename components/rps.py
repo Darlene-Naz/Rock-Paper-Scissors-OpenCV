@@ -133,6 +133,9 @@ class RockPaperScissor:
         # --- Limit to 60 frames per second
         self.clock.tick(60)
 
+        if self.cScore == self.totalScore or self.pScore == self.totalScore:
+            self.gameOver()
+
     def gameOver(self, delay=3500):
         # Create surface for Game Over message
         gameOverPopUp = pygame.Surface((400, 200))
@@ -198,8 +201,6 @@ class RockPaperScissor:
             self.cScore += 1
         elif winner == "player":
             self.pScore += 1
-        if self.cScore == self.totalScore or self.pScore == self.totalScore:
-            self.gameOver()
 
     def setCImg(self, num):
         img = cv2.imread("utils/images/" + str(num) + ".png", cv2.IMREAD_COLOR)

@@ -13,7 +13,7 @@ def rpsGame(totalScore=3):
     rps = RockPaperScissor(totalScore)
     rps.setCImg(1)
 
-    model = load_model("models/final_custom_model6.h5")
+    model = load_model("models/model8.h5")
 
     while rps.carryOn:
 
@@ -58,4 +58,4 @@ def rpsGame(totalScore=3):
 
 if __name__ == "__main__":
     print("[INFO] To get started, press 'SPACE' after adjusting hand in the box")
-    rpsGame(totalScore=1)
+    rpsGame(totalScore=3)
