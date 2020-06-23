@@ -6,50 +6,56 @@ import numpy as np
 from components import RockPaperScissor, Camera
 from tensorflow.keras.models import load_model
 
-# --- Init
-camera = Camera()
-rps = RockPaperScissor()
-rps.setCImg(1)
 
-model = load_model("models/final_custom_model6.h5")
+def rpsGame(totalScore=3):
+    # --- Init
+    camera = Camera()
+    rps = RockPaperScissor(totalScore)
+    rps.setCImg(1)
 
-while rps.carryOn:
+    model = load_model("models/final_custom_model6.h5")
 
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            rps.quit()
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_SPACE:
-                rps.startTimer(3)
+    while rps.carryOn:
 
-    # --- opencv pImg
-    frame_roi = camera.get_frame()
-    rps.setPImg(frame_roi)
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                rps.quit()
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    rps.startTimer(3)
 
-    if rps.duration == 0 and rps.timer_started:
+        # --- opencv pImg
+        frame_roi = camera.get_frame()
+        rps.setPImg(frame_roi)
 
-        # --- cImg
-        c_num = random.randint(0, 2)
-        rps.setCImg(c_num)
+        if rps.duration == 0 and rps.timer_started:
 
-        # model predicts
-        x = camera.save_current_frame(frame_roi)
-        y = model.predict(x)
-        print(np.max(y))
-        p_num = np.argmax(y, axis=1)[0]
-        print(np.argmax(y, axis=1))
-        print(utils.gestureText[int(np.argmax(y, axis=1))])
+            # --- cImg
+            c_num = random.randint(0, 2)
+            rps.setCImg(c_num)
 
-        rps.decideWinner(c_num,p_num)
+            # model predicts
+            x = camera.save_current_frame(frame_roi)
+            y = model.predict(x)
+            print(np.max(y))
+            p_num = np.argmax(y, axis=1)[0]
+            print(np.argmax(y, axis=1))
+            print(utils.gestureText[int(np.argmax(y, axis=1))])
 
-        rps.stopTimer()
-        
+            rps.decideWinner(c_num, p_num)
 
-    # --- Drawing background code
-    rps.draw_ui()
+            rps.stopTimer()
 
-    # --- updating Timer
-    rps.updateTimer()
+        # --- Drawing background code
+        rps.draw_ui()
 
-rps.quit()
-camera.quit()
+        # --- updating Timer
+        rps.updateTimer()
+
+    rps.quit()
+    camera.quit()
+
+
+if __name__ == "__main__":
+    print("[INFO] To get started, press 'SPACE' after adjusting hand in the box")
+    rpsGame(totalScore=1)

@@ -5,7 +5,7 @@ import sys
 
 
 class RockPaperScissor:
-    def __init__(self):
+    def __init__(self, totalScore=3):
         pygame.init()
 
         self.carryOn = True
@@ -32,7 +32,7 @@ class RockPaperScissor:
         # scores
         self.pScore = 0
         self.cScore = 0
-        self.totalScore = 1
+        self.totalScore = totalScore
         self.winner = None
 
         # timer
@@ -140,9 +140,9 @@ class RockPaperScissor:
         gameOverPopUp.fill(self.WHITE)
 
         vertices = [(3, 3), (396, 3), (396, 196), (3, 196), (3, 3)]
-        pygame.draw.polygon(gameOverPopUp, self.BLACK, vertices, 1)
+        pygame.draw.polygon(gameOverPopUp, self.GREY, vertices, 0)
 
-        gameOverText = self.FONT.render("GAME OVER",True, self.BLACK)
+        gameOverText = self.FONT.render("GAME OVER", True, self.BLACK)
         gameOverPopUp.blit(gameOverText, (120, 45))
 
         if self.pScore > self.cScore:
@@ -159,7 +159,6 @@ class RockPaperScissor:
         self.screen.blit(gameOverPopUp, pos)
 
         pygame.display.flip()
-
         pygame.time.wait(delay)
 
         if self.carryOn:
@@ -180,11 +179,15 @@ class RockPaperScissor:
             pygame.time.wait(1000)
             if self.duration > 0:
                 self.duration = self.duration - 1
-    
-    def decideWinner(self,c_num,p_num):
-        if (p_num==c_num):
+
+    def decideWinner(self, c_num, p_num):
+        if p_num == c_num:
             self.updateScores("tie")
-        elif((p_num == 2 and c_num == 0) or (p_num == 1 and c_num ==2) or (p_num == 0 and c_num == 1) ):
+        elif (
+            (p_num == 2 and c_num == 0)
+            or (p_num == 1 and c_num == 2)
+            or (p_num == 0 and c_num == 1)
+        ):
             self.updateScores("player")
         else:
             self.updateScores("computer")
@@ -195,7 +198,7 @@ class RockPaperScissor:
             self.cScore += 1
         elif winner == "player":
             self.pScore += 1
-        if(self.cScore == self.totalScore or self.pScore ==self.totalScore):
+        if self.cScore == self.totalScore or self.pScore == self.totalScore:
             self.gameOver()
 
     def setCImg(self, num):
@@ -215,5 +218,5 @@ class RockPaperScissor:
 
     def reset(self):
         self.winner = None
-        self.plScore = 0
-        self.coScore = 0
+        self.pScore = 0
+        self.cScore = 0
