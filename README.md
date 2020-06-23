@@ -63,8 +63,7 @@ python play.py
 
 <ul>
 CNN Links :
-<li><a href="https://www.pygame.org/docs/">Pygame Docs</a> or even this <a href="https://pygame.readthedocs.io/">Pygame Guide</a></li>
-<li><a href="https://www.101computing.net/getting-started-with-pygame/">A Basic Pygame Tutorial</a></li>
+<li>The best way to get started -> <a href="https://www.coursera.org/learn/convolutional-neural-networks/">Convolutional Neural Networks by Andrew Ng</a>
 
 OpenCV Links :
 
