@@ -1,12 +1,14 @@
 <!-- @format -->
 
-# Rock-Paper-Scissors <img src="https://image.flaticon.com/icons/svg/2103/2103633.svg" height="40px" width="40px"/>
+# Rock-Paper-Scissors <img src="https://github.com/Darlene-Naz/Rock-Paper-Scissors-OpenCV-Game/blob/master/utils/images/gaming.png" height="40px" width="40px"/>
 
-A Rock-Paper-Scissors <b>Pygame</b> with a <b>CNN Multiclass Classifier</b> Model built in Keras to recognize real-time hand gestures using <b>OpenCV</b>.
+A Rock-Paper-Scissors <b>Pygame</b> with a <b>CNN Multiclass Classifier</b> model built in Keras to recognize real-time hand gestures using <b>OpenCV</b>.
+
 
 ## Working Demonstration
 
 ![]()
+
 
 ## Overview
 
@@ -16,6 +18,7 @@ The pictures taken by the camera are processed and fed to a CNN Multi-class imag
 
 This CNN model is made in keras. You can download the pretrained model from here.
 
+
 ## Getting Started
 
 **1. Clone the repository**
@@ -23,32 +26,29 @@ This CNN model is made in keras. You can download the pretrained model from here
 ```bash
 git clone https://github.com/Darlene-Naz/Rock-Paper-Scissors-OpenCV-Game.git
 ```
-
 **2. Start a virtual environment eg. conda (Recommended)**
 
 ```bash
 conda activate <my_virtual_env>
 ```
-
 **3. Download the requirements**
 
 ```bash
 cd Skyplay-NN
 pip install requirements.txt
 ```
-
 **4. Download the model**
 
 ```bash
 cd Skyplay-NN
 pip install requirements.txt
 ```
-
 **4. Start the server**
 
 ```bash
 python play.py
 ```
+
 
 ## Task List
 
@@ -59,23 +59,25 @@ python play.py
 - [x] Work more on the model
 - [x] Fix bugs & Add comments to code
 
-## References
 
-<ul>
+## References
+  
 CNN Links :
+<ul>
 <li><a href="https://www.pygame.org/docs/">Pygame Docs</a> or even this <a href="https://pygame.readthedocs.io/">Pygame Guide</a></li>
 <li><a href="https://www.101computing.net/getting-started-with-pygame/">A Basic Pygame Tutorial</a></li>
+</ul>
 
 OpenCV Links :
-
+<ul>
 <li><a href="https://www.pygame.org/docs/">Pygame Docs</a> or even this <a href="https://pygame.readthedocs.io/">Pygame Guide</a></li>
 <li><a href="https://www.101computing.net/getting-started-with-pygame/">A Basic Pygame Tutorial</a></li>
+</ul>
 
 Pygame Links :
-
+<ul>
 <li><a href="https://www.pygame.org/docs/">Pygame Docs</a> or even this <a href="https://pygame.readthedocs.io/">Pygame Guide</a></li>
 <li><a href="https://www.101computing.net/getting-started-with-pygame/">A Basic Pygame Tutorial</a></li>
-
 </ul>
 
 ## License
