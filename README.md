@@ -18,7 +18,7 @@ This CNN model is made in keras. You can download the pretrained model from here
 
 ## Origin
 
-After completing a couple of CNN courses on coursera I wanted to hone my skills by focusing on small project. So I found 2 useful datasets and jumped straight into building my model. I didnt want to stop there... this led me to create my first pygame. I'm happy with my progress and would like to share it with you.
+After completing a couple of CNN courses on coursera I wanted to hone my skills by focusing on a small project. So I jumped straight into building my model. I didnt want to stop there... this led me to create my first pygame. I'm happy with my progress and would like to share it with you.
 
 ## Getting Started
 
