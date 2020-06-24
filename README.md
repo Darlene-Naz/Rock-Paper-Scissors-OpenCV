@@ -1,6 +1,6 @@
 <!-- @format -->
 
-# Rock-Paper-Scissors <img src="https://github.com/Darlene-Naz/Rock-Paper-Scissors-OpenCV/blob/master/utils/images/gaming.png" height="40px" width="40px"/>
+# Rock-Paper-Scissors <img src="https://github.com/Darlene-Naz/Rock-Paper-Scissors-OpenCV/blob/master/src/utils/images/gaming.png" height="40px" width="40px"/>
 
 A Rock-Paper-Scissors <b>Pygame</b> with a <b>CNN Multiclass Classifier</b> model built in Keras to recognize real-time hand gestures using <b>OpenCV</b>.
 
