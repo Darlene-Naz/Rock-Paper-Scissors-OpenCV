@@ -39,7 +39,19 @@ pip install requirements.txt
 
 **4. Download the model**
 
-<a href="https://www.coursera.org/learn/convolutional-neural-networks/">model10.h5</a>
+```bash
+.
+├───components
+│   └───__pycache__
+├───models                # model.h5 files here
+├───Notebooks
+│   └───.ipynb_checkpoints
+├───readme_requirements
+│   └───video
+└───utils
+    ├───images
+    └───__pycache__
+```
 
 **5. Start the server**
 
