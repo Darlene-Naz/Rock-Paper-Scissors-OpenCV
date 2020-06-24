@@ -47,7 +47,7 @@ pip install requirements.txt
 **4. Start the server**
 
 ```bash
-python play.py
+python game.py
 ```
 
 ## Task List
