@@ -61,7 +61,7 @@ pip install requirements.txt
     └───unit
 ```
 
-**5. Start the server**
+**5. Run the game**
 
 ```bash
 python src/main.py
