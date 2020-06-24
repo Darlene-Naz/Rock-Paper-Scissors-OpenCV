@@ -6,7 +6,7 @@ A Rock-Paper-Scissors <b>Pygame</b> with a <b>CNN Multiclass Classifier</b> mode
 
 ## Working Demonstration
 
-![Rock-Paper-Scissors-OpenCV/readme_requirements/videos/rps.gif]()
+![Rock-Paper-Scissors-OpenCV/readme_requirements/video/rps.gif]()
 
 ## Overview
 
