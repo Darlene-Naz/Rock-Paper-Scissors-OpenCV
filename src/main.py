@@ -13,7 +13,7 @@ def rpsGame(totalScore=3):
     rps = RockPaperScissor(totalScore)
     rps.setCImg(1)
 
-    model = load_model("models/inception_model.h5")
+    model = load_model("models/model10.h5")
 
     while rps.carryOn:
 
