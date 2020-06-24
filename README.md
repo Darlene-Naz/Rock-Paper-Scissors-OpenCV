@@ -41,22 +41,26 @@ pip install requirements.txt
 
 ```bash
 .
-├───components
-│   └───__pycache__
-├───models                # model.h5 files here
-├───Notebooks
+├───models                      # model.h5 files here
+├───notebooks
 │   └───.ipynb_checkpoints
 ├───readme_requirements
 │   └───video
-└───utils
-    ├───images
-    └───__pycache__
+├───src
+│   ├───components
+│   │   └───__pycache__
+│   └───utils
+│       ├───images
+│       └───__pycache__
+└───tests
+    ├───integration
+    └───unit
 ```
 
 **5. Start the server**
 
 ```bash
-python game.py
+python src/main.py
 ```
 
 ## Task List

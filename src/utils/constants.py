@@ -7,8 +7,8 @@ gestureText = {ROCK: "rock", PAPER: "paper", SCISSORS: "scissors"}
 
 # Define paths to static image folders
 gestureImgPaths = {
-    PAPER: "utils/images/0.png",
-    ROCK: "utils/images/1.png",
-    SCISSORS: "utils/images/2.png",
+    PAPER: "src/utils/images/0.png",
+    ROCK: "src/utils/images/1.png",
+    SCISSORS: "src/utils/images/2.png",
 }
 

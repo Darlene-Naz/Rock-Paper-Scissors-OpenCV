@@ -22,9 +22,7 @@ print("Camera Window Loaded!")
 
 pygame.init()
 
-model = load_model(
-    filepath="C:/Users/Darlene/Desktop/GitHub/Rock-Paper-Scissors-OpenCV-Game/models/final_custom_model6.h5"
-)
+model = load_model(filepath="models/model10.h5")
 
 
 # Define some default colors, fonts and msgs

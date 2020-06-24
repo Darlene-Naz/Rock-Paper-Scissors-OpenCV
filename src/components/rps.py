@@ -25,9 +25,9 @@ class RockPaperScissor:
         self.FONT = pygame.font.SysFont("Arial", 30, bold=True, italic=False)
         self.FONT_TIMER = pygame.font.Font(None, 54)
 
-        self.DISPLAY_ICON = "utils/images/gaming.png"
-        self.CLOCK = "utils/images/time.png"
-        self.MSG_BUBBLE = "utils/images/comment.png"
+        self.DISPLAY_ICON = "src/utils/images/gaming.png"
+        self.CLOCK = "src/utils/images/time.png"
+        self.MSG_BUBBLE = "src/utils/images/comment.png"
 
         # scores
         self.pScore = 0
@@ -207,7 +207,7 @@ class RockPaperScissor:
         print("[GAME] Score: Computer {} & Player {}".format(self.cScore, self.pScore))
 
     def setCImg(self, num):
-        img = cv2.imread("utils/images/" + str(num) + ".png", cv2.IMREAD_COLOR)
+        img = cv2.imread("src/utils/images/" + str(num) + ".png", cv2.IMREAD_COLOR)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         img = cv2.resize(img, (280, 335))
         img = np.rot90(img)
