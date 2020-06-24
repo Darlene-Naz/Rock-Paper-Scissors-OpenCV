@@ -14,7 +14,7 @@ This game simply uses your computer's camera to capture realtime gestures of you
 
 The pictures taken by the camera are processed and fed to a CNN Multi-class image classifier that determines whether the gesture corresponds to "Rock", "Paper" or "Scissors" gesture.
 
-This CNN model is made in keras. You can download the pretrained model from here & the dataset from <a href="https://drive.google.com/file/d/1WvVytiOvN7dHT6bydG28rVxJqyf8F1NE/view?usp=sharing">this</a> drive link.
+This CNN model is made in keras. You can download the pretrained model from <a href="https://drive.google.com/file/d/1zdw4XDrVhwxIXhiKoULb5Aq9soPvxr0o/view?usp=sharing">here</a> & the dataset from <a href="https://drive.google.com/file/d/1WvVytiOvN7dHT6bydG28rVxJqyf8F1NE/view?usp=sharing">this</a> drive link.
 
 ## Prologue
 
