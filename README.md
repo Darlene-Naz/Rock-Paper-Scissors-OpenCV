@@ -33,14 +33,14 @@ conda activate <my_virtual_env>
 **3. Download the requirements**
 
 ```bash
-cd Skyplay-NN
+cd Rock-Paper-Scissors-OpenCV-Game
 pip install requirements.txt
 ```
 
 **4. Download the model**
 
 ```bash
-cd Skyplay-NN
+cd Rock-Paper-Scissors-OpenCV-Game
 pip install requirements.txt
 ```
 
