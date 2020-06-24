@@ -6,7 +6,7 @@ A Rock-Paper-Scissors <b>Pygame</b> with a <b>CNN Multiclass Classifier</b> mode
 
 ## Working Demonstration
 
-![]()
+![Rock-Paper-Scissors-OpenCV/readme_requirements/videos/rps.gif]()
 
 ## Overview
 
@@ -39,12 +39,9 @@ pip install requirements.txt
 
 **4. Download the model**
 
-```bash
-cd Rock-Paper-Scissors-OpenCV
-pip install requirements.txt
-```
+<a href="https://www.coursera.org/learn/convolutional-neural-networks/">model10.h5</a>
 
-**4. Start the server**
+**5. Start the server**
 
 ```bash
 python game.py
