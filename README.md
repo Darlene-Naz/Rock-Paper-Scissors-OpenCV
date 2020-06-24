@@ -71,9 +71,9 @@ python src/main.py
 
 Round 1             |  Round 2             |  Round 3              |
 :-------------------------:|:-------------------------:|:-------------------------:
-![alt-text-1](readme_requirements/r1.png "title-1") | ![alt-text-2](readme_requirements/r2.png "title-2") | ![alt-text-2](readme_requirements/r3.png "title-3")
+![Player-Paper](readme_requirements/r1.png "title-1") | ![Player-Scissor](readme_requirements/r2.png "title-2") | ![Player-Scissor](readme_requirements/r3.png "title-3")
 Round 4             |  Round 5             |  Round 6              |
-![alt-text-1](readme_requirements/r4.png "title-1") | ![alt-text-2](readme_requirements/r5.png "title-2") | ![alt-text-2](readme_requirements/r6.png "title-3")
+![Player-Rock](readme_requirements/r4.png "title-1") | ![Player-Scissor](readme_requirements/r5.png "title-2") | ![Player-Rock](readme_requirements/r6.png "title-3")
 
 Command Line Output          |
 :----------------------------:
@@ -107,7 +107,7 @@ Pygame Links :
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[MIT License Link](https://github.com/darlene-naz/Rock-Paper-Scissor-OpenCV/blob/master/LICENSE)
+[MIT License Link](https://github.com/Darlene-Naz/Rock-Paper-Scissors-OpenCV/blob/master/LICENSE)
 
 
 © 2020 Darlene Nazareth
