@@ -1,6 +1,6 @@
 <!-- @format -->
 
-# Rock-Paper-Scissors <img src="https://github.com/Darlene-Naz/Rock-Paper-Scissors-OpenCV-Game/blob/master/utils/images/gaming.png" height="40px" width="40px"/>
+# Rock-Paper-Scissors <img src="https://github.com/Darlene-Naz/Rock-Paper-Scissors-OpenCV/blob/master/utils/images/gaming.png" height="40px" width="40px"/>
 
 A Rock-Paper-Scissors <b>Pygame</b> with a <b>CNN Multiclass Classifier</b> model built in Keras to recognize real-time hand gestures using <b>OpenCV</b>.
 
@@ -21,7 +21,7 @@ This CNN model is made in keras. You can download the pretrained model from here
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/Darlene-Naz/Rock-Paper-Scissors-OpenCV-Game.git
+git clone <this_repo_url>
 ```
 
 **2. Start a virtual environment eg. conda (Recommended)**
@@ -33,21 +33,21 @@ conda activate <my_virtual_env>
 **3. Download the requirements**
 
 ```bash
-cd Skyplay-NN
+cd Rock-Paper-Scissors-OpenCV
 pip install requirements.txt
 ```
 
 **4. Download the model**
 
 ```bash
-cd Skyplay-NN
+cd Rock-Paper-Scissors-OpenCV
 pip install requirements.txt
 ```
 
 **4. Start the server**
 
 ```bash
-python play.py
+python game.py
 ```
 
 ## Task List
