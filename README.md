@@ -105,4 +105,9 @@ Pygame Links :
 
 ## License
 
-© 2020 Copyright
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+[MIT License Link](https://github.com/darlene-naz/Rock-Paper-Scissor-OpenCV/blob/master/LICENSE)
+
+
+© 2020 Darlene Nazareth
