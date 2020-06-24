@@ -186,14 +186,17 @@ class RockPaperScissor:
     def decideWinner(self, c_num, p_num):
         if p_num == c_num:
             self.updateScores("tie")
+            print("[GAME] Results: Tie!")
         elif (
             (p_num == 2 and c_num == 0)
             or (p_num == 1 and c_num == 2)
             or (p_num == 0 and c_num == 1)
         ):
             self.updateScores("player")
+            print("[GAME] Results: Player wins this round!")
         else:
             self.updateScores("computer")
+            print("[GAME] Results: Computer wins this round!")
 
     def updateScores(self, winner=None):
         self.winner = winner
@@ -201,6 +204,7 @@ class RockPaperScissor:
             self.cScore += 1
         elif winner == "player":
             self.pScore += 1
+        print("[GAME] Score: Computer {} & Player {}".format(self.cScore, self.pScore))
 
     def setCImg(self, num):
         img = cv2.imread("utils/images/" + str(num) + ".png", cv2.IMREAD_COLOR)

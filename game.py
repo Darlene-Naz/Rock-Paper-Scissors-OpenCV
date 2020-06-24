@@ -13,7 +13,7 @@ def rpsGame(totalScore=3):
     rps = RockPaperScissor(totalScore)
     rps.setCImg(1)
 
-    model = load_model("models/model10.h5")
+    model = load_model("models/inception_model.h5")
 
     while rps.carryOn:
 
@@ -37,11 +37,10 @@ def rpsGame(totalScore=3):
             # model predicts
             x = camera.save_current_frame(frame_roi)
             y = model.predict(x)
-            print(np.max(y))
+            print("[MODEL] Max Probability: " + str(np.max(y)))
             p_num = np.argmax(y, axis=1)[0]
-            print(np.argmax(y, axis=1))
-            print(utils.gestureText[int(np.argmax(y, axis=1))])
-
+            print("[GAME] Player: " + utils.gestureText[int(np.argmax(y, axis=1))])
+            print("[GAME] Computer: {}".format(utils.gestureText[c_num]))
             rps.decideWinner(c_num, p_num)
 
             rps.stopTimer()
