@@ -1,7 +1,7 @@
 tensorflow==2.1.0
 keras==2.3.1
 pygame==1.9.6
-opency-python>=4.1.2.30
+opencv-python>=4.1.2.30
 numpy>=1.18.1
 matplotlib>=3.2.0
 pandas>=0.25.3
