@@ -80,6 +80,7 @@ python src/main.py
 
 CNN Links :
 <li>The best way to get started -> <a href="https://www.coursera.org/learn/convolutional-neural-networks/">Convolutional Neural Networks by Andrew Ng</a>
+
 Pygame Links :
 <ul>
 <li><a href="https://www.pygame.org/docs/">Pygame Docs</a> or even this <a href="https://pygame.readthedocs.io/">Pygame Guide</a></li>
