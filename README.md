@@ -69,7 +69,15 @@ python src/main.py
 
 ## Outputs
 
-![](readme_requirements/cmdline.png)
+Round 1             |  Round 2             |  Round 3              |
+:-------------------------:|:-------------------------:|:-------------------------:
+![alt-text-1](readme_requirements/r1.png "title-1") | ![alt-text-2](readme_requirements/r2.png "title-2") | ![alt-text-2](readme_requirements/r3.png "title-3")
+Round 4             |  Round 5             |  Round 6              |
+![alt-text-1](readme_requirements/r4.png "title-1") | ![alt-text-2](readme_requirements/r5.png "title-2") | ![alt-text-2](readme_requirements/r6.png "title-3")
+
+Command Line Output          |
+:----------------------------:
+![](readme_requirements/cmdline.png) |
 
 ## Task List
 
