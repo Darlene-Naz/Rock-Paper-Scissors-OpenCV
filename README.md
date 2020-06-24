@@ -67,6 +67,72 @@ pip install requirements.txt
 python src/main.py
 ```
 
+## Outputs
+
+[INFO] To get started, press 'SPACE' after adjusting hand in the box
+[System] Initializing Camera...
+[System] Camera Window Loaded!
+[Debug] Image Saved!
+[MODEL] Max Probability: 0.9817846
+[GAME] Player: paper
+[GAME] Computer: scissors
+[GAME] Score: Computer 1 & Player 0
+[GAME] Results: Computer wins this round!
+[Debug] Image Saved!
+[MODEL] Max Probability: 0.8957788
+[GAME] Player: scissors
+[GAME] Computer: scissors
+[GAME] Score: Computer 1 & Player 0
+[GAME] Results: Tie!
+[Debug] Image Saved!
+[MODEL] Max Probability: 0.6092333
+[GAME] Player: paper
+[GAME] Computer: paper
+[GAME] Score: Computer 1 & Player 0
+[GAME] Results: Tie!
+[Debug] Image Saved!
+[MODEL] Max Probability: 0.8689292
+[GAME] Player: rock
+[GAME] Computer: rock
+[GAME] Score: Computer 1 & Player 0
+[GAME] Results: Tie!
+[Debug] Image Saved!
+[MODEL] Max Probability: 0.99928963
+[GAME] Player: paper
+[GAME] Computer: rock
+[GAME] Score: Computer 1 & Player 1
+[GAME] Results: Player wins this round!
+[Debug] Image Saved!
+[MODEL] Max Probability: 0.5058385
+[GAME] Player: scissors
+[GAME] Computer: scissors
+[GAME] Score: Computer 1 & Player 1
+[GAME] Results: Tie!
+[Debug] Image Saved!
+[MODEL] Max Probability: 0.93402463
+[GAME] Player: rock
+[GAME] Computer: scissors
+[GAME] Score: Computer 1 & Player 2
+[GAME] Results: Player wins this round!
+[Debug] Image Saved!
+[MODEL] Max Probability: 0.6695166
+[GAME] Player: scissors
+[GAME] Computer: rock
+[GAME] Score: Computer 2 & Player 2
+[GAME] Results: Computer wins this round!
+[Debug] Image Saved!
+[MODEL] Max Probability: 0.9671053
+[GAME] Player: rock
+[GAME] Computer: rock
+[GAME] Score: Computer 2 & Player 2
+[GAME] Results: Tie!
+[Debug] Image Saved!
+[MODEL] Max Probability: 0.7444503
+[GAME] Player: paper
+[GAME] Computer: rock
+[GAME] Score: Computer 2 & Player 3
+[GAME] Results: Player wins this round!
+
 ## Task List
 
 - [x] Create a CNN Multi-Class Classifier
@@ -79,9 +145,13 @@ python src/main.py
 ## References
 
 CNN Links :
+
+<ul>
 <li>The best way to get started -> <a href="https://www.coursera.org/learn/convolutional-neural-networks/">Convolutional Neural Networks by Andrew Ng</a>
+</ul>
 
 Pygame Links :
+
 <ul>
 <li><a href="https://www.pygame.org/docs/">Pygame Docs</a> or even this <a href="https://pygame.readthedocs.io/">Pygame Guide</a></li>
 <li><a href="https://www.101computing.net/getting-started-with-pygame/">A Basic Pygame Tutorial</a></li>
