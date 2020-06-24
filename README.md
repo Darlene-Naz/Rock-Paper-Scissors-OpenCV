@@ -4,7 +4,7 @@
 
 A Rock-Paper-Scissors <b>Pygame</b> with a <b>CNN Multiclass Classifier</b> model built in Keras to recognize real-time hand gestures using <b>OpenCV</b>.
 
-## Working Demonstration
+## Working Demo
 
 ![](readme_requirements/video/rps.gif)
 
@@ -15,6 +15,10 @@ This game simply uses your computer's camera to capture realtime gestures of you
 The pictures taken by the camera are processed and fed to a CNN Multi-class image classifier that determines whether the gesture corresponds to "Rock", "Paper" or "Scissors" gesture.
 
 This CNN model is made in keras. You can download the pretrained model from here.
+
+## Origin
+
+After completing a couple of CNN courses on coursera I wanted to hone my skills by focusing on small project. So I found 2 useful datasets and jumped straight into building my model. I didnt want to stop there... this led me to create my first pygame. I'm happy with my progress and would like to share it with you.
 
 ## Getting Started
 
@@ -75,11 +79,8 @@ python src/main.py
 ## References
 
 CNN Links :
-
 <li>The best way to get started -> <a href="https://www.coursera.org/learn/convolutional-neural-networks/">Convolutional Neural Networks by Andrew Ng</a>
-
 Pygame Links :
-
 <ul>
 <li><a href="https://www.pygame.org/docs/">Pygame Docs</a> or even this <a href="https://pygame.readthedocs.io/">Pygame Guide</a></li>
 <li><a href="https://www.101computing.net/getting-started-with-pygame/">A Basic Pygame Tutorial</a></li>
