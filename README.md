@@ -14,11 +14,11 @@ This game simply uses your computer's camera to capture realtime gestures of you
 
 The pictures taken by the camera are processed and fed to a CNN Multi-class image classifier that determines whether the gesture corresponds to "Rock", "Paper" or "Scissors" gesture.
 
-This CNN model is made in keras. You can download the pretrained model from here.
+This CNN model is made in keras. You can download the pretrained model from here & the dataset from <a href="https://drive.google.com/file/d/1WvVytiOvN7dHT6bydG28rVxJqyf8F1NE/view?usp=sharing">this</a> drive link.
 
-## Origin
+## Prologue
 
-After completing a couple of CNN courses on coursera I wanted to hone my skills by focusing on a small project. So I jumped straight into building my model. I didnt want to stop there... this led me to create my first pygame. I'm happy with my progress and would like to share it with you.
+After completing a couple of CNN courses on coursera I wanted to hone my skills by focusing on a small project. So I found 2 useful datasets and jumped straight into building my model. I didnt want to stop there... this led me to create my first pygame. I'm happy with my progress and would like to share it with you.
 
 ## Getting Started
 
