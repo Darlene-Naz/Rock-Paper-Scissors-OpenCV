@@ -1,4 +1,4 @@
-tensorflow==2.1.2
+tensorflow==2.6.4
 keras==2.3.1
 pygame==1.9.6
 opencv-python>=4.1.2.30
